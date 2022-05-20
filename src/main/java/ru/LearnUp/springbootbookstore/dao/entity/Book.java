@@ -3,18 +3,19 @@ package ru.LearnUp.springbootbookstore.dao.entity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
+import org.springframework.data.redis.core.RedisHash;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "book")
 @Getter
 @Setter
-@ToString
 @RequiredArgsConstructor
-public class Book {
+@RedisHash
+public class Book implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +37,18 @@ public class Book {
     @Column
     private float price;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", fetch = FetchType.EAGER)
     private List<OrderDetails> orderDetails;
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author=" + author +
+                ", year=" + year +
+                ", pages=" + pages +
+                ", price=" + price +
+                '}';
+    }
 }
