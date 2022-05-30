@@ -1,7 +1,8 @@
-package ru.LearnUp.springbootbookstore.dao.repositories;
+package ru.LearnUp.springbootbookstore.dao.services;
 
 import org.springframework.stereotype.Service;
 import ru.LearnUp.springbootbookstore.dao.entity.Author;
+import ru.LearnUp.springbootbookstore.dao.repositories.AuthorRepository;
 
 import java.util.List;
 

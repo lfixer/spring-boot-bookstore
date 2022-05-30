@@ -7,9 +7,9 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
-import ru.LearnUp.springbootbookstore.dao.repositories.AuthorService;
+import ru.LearnUp.springbootbookstore.dao.services.AuthorService;
 import ru.LearnUp.springbootbookstore.dao.repositories.BookRepository;
-import ru.LearnUp.springbootbookstore.dao.repositories.BookService;
+import ru.LearnUp.springbootbookstore.dao.services.BookService;
 
 
 @SpringBootApplication
