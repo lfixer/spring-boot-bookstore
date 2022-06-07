@@ -27,6 +27,7 @@ public class SpringBootBookstoreApplication {
 		BookRepository repository = context.getBean(BookRepository.class);
 
 		log.info("Books: {}", repository.findByAuthor(1L));
+
 	}
 
 }
